@@ -10,16 +10,17 @@ button0.addEventListener("click", function(){
 
 	h1_js.style.color = "Green";
 	p_text.textContent = "Goodbye!";
+	document.body.classList.toggle("lightblue");
 	
-	if(!isBlue){
-	body_background.style.background = "lightblue";
+// 	if(!isBlue){
+// 	body_background.style.background = "lightblue";
 		
-	}
-	else{
-	body_background.style.background = "white";
+// 	}
+// 	else{
+// 	body_background.style.background = "white";
 	 
-}
-	isBlue=!isBlue;
+// }
+// 	isBlue=!isBlue;
 
 })
 
