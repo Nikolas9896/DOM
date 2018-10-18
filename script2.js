@@ -7,11 +7,11 @@
 
 
 button0.addEventListener("click", function(){
-
+//************** with Toggle
 	h1_js.style.color = "Green";
 	p_text.textContent = "Goodbye!";
 	document.body.classList.toggle("myclass");
-	
+	//******************** without Toggle function *************
 // 	if(!isBlue){
 // 	body_background.style.background = "lightblue";
 		
