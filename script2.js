@@ -1,16 +1,16 @@
-var p_text = document.getElementsByTagName('p')[0];
-var button0 = document.getElementsByTagName('button')[0];
-var h1_js = document.querySelector('h1');
-var list_black = document.querySelectorAll('li');
-var body_background = document.querySelector('body');
-var isBlue = false;
+ var p_text = document.getElementsByTagName('p')[0];
+ var button0 = document.getElementsByTagName('button')[0];
+ var h1_js = document.querySelector('h1');
+ var list_black = document.querySelectorAll('li');
+ var body_background = document.querySelector('body');
+ var isBlue = false;
 
 
 button0.addEventListener("click", function(){
 
 	h1_js.style.color = "Green";
 	p_text.textContent = "Goodbye!";
-	document.body.classList.toggle("lightblue");
+	document.body.classList.toggle("myclass");
 	
 // 	if(!isBlue){
 // 	body_background.style.background = "lightblue";
