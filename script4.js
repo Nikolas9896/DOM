@@ -10,6 +10,12 @@ LiAll[i].addEventListener("mouseout", function(){
 
 	this.style.color = "black";
 });
+
+	LiAll[i].addEventListener("click", function(){
+		this.classList.toggle("done");
+	})
+
+
 }
 
 
