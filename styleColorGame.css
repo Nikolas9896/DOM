@@ -3,6 +3,13 @@ background-color: #232323;
 
 }
 
+h1	{
+	color: white;
+}
+
+span{
+	color: white;
+}
 .square{
 width: 30%;
 background: purple;
@@ -14,8 +21,4 @@ margin: 1.66%;
 #container {
 	margin: 0 auto;
 	max-width: 600px;
-}
-
-h1	{
-	color: white;
 }
