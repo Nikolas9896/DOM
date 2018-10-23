@@ -26,6 +26,7 @@ for(var i = 0; i<length; i++ )
 	if(clickedColor === pickedColor)
 		{
 			messageDisplay.textContent = "Correct!";
+			changeColors(clickedColor);
 			
 		}
 	else
@@ -37,4 +38,12 @@ for(var i = 0; i<length; i++ )
 	});
 
 
+}
+
+function changeColors(color){
+	//loop through all squares
+	for(var i = 0; i < length; i++)
+	{
+		squares[i].style.background = color;
+	}
 }
