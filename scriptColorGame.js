@@ -7,9 +7,24 @@ var pickedColor = pickColor();
 var messageDisplay = document.querySelector('#message');
 var wincolorH1 = document.getElementsByTagName('h1')[0];
 var resetButton = document.querySelector('#reset');
+var easyButton = document.getElementById('easy');
+var hardButton = document.getElementById('hard');
+
 resetButton.textContent = "New Game";
 colorDisplay.textContent = pickedColor;
 messageDisplay.textContent = " ";
+
+easyButton.addEventListener("click", function(){
+
+});
+
+hardButton.addEventListner("click", function(){
+
+
+});
+
+
+
 resetButton.addEventListener("click",function(){
 	//generate all new colors
 	colors = generateRandomColors(6);
