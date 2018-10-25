@@ -20,7 +20,7 @@ hardButton.classList.add("selected");
 easyButton.addEventListener("click", function(){
 	numberOfSquares=3;
 	resetButton.textContent = "New Game";
-	wincolorH1.style.backgroundColor = "#232323";
+	wincolorH1.style.backgroundColor = "steelblue";
 	easyButton.classList.add("selected");
 	hardButton.classList.remove("selected");
 	colors = generateRandomColors(numberOfSquares);
@@ -63,7 +63,7 @@ hardButton.addEventListener("click", function(){
 	easyButton.classList.remove("selected");
 	messageDisplay.textContent = " ";
 	resetButton.textContent = "New Game";
-	wincolorH1.style.backgroundColor = "#232323";
+	wincolorH1.style.backgroundColor = "steelblue";
 	numberOfSquares=6;
 	colors = generateRandomColors(numberOfSquares);
 	pickedColor = pickColor();
@@ -92,7 +92,7 @@ resetButton.addEventListener("click",function(){
 	//change color display to match picked Color
 	colorDisplay.textContent = pickedColor;
 	//range colors of squares
-	wincolorH1.style.backgroundColor = "#232323";
+	wincolorH1.style.backgroundColor = "steelblue";
 	messageDisplay.textContent = " ";
 	resetButton.textContent = "New Game";
 	for(var i = 0; i< squares.length; i++)
@@ -122,7 +122,7 @@ for(var i = 0; i<squares.length; i++ )
 		}
 	else
 		{
-			this.style.backgroundColor = "#232323";
+			this.style.backgroundColor = "steelblue";
 			messageDisplay.textContent = "Try Again!";
 		}
 

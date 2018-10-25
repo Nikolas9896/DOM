@@ -4,7 +4,9 @@ background-color: #232323;
 }
 
 h1	{
+	text-align: center;
 	color: white;
+	background-color: steelblue;
 }
 
 /*span{
