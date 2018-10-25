@@ -92,7 +92,7 @@ resetButton.addEventListener("click",function(){
 	//change color display to match picked Color
 	colorDisplay.textContent = pickedColor;
 	//range colors of squares
-	wincolorH1.style.backgroundColor = "steelblue";
+	wincolorH1.style.backgroundColor = "#232323";
 	messageDisplay.textContent = " ";
 	resetButton.textContent = "New Game";
 	for(var i = 0; i< squares.length; i++)
@@ -122,7 +122,7 @@ for(var i = 0; i<squares.length; i++ )
 		}
 	else
 		{
-			this.style.backgroundColor = "steelblue";
+			this.style.backgroundColor = "#232323";
 			messageDisplay.textContent = "Try Again!";
 		}
 

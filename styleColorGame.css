@@ -1,17 +1,24 @@
 body{
 background-color: #232323;
-
+margin: 0;
+font-family: 'Montserrat', '_Avenir_';
 }
 
 h1	{
+	font-weight: normal;
+	line-height: 1.1;
 	text-align: center;
 	color: white;
 	background-color: steelblue;
+	margin: 0;
+	text-transform: uppercase;
+	padding: 20px 0;
+}
+button	{
+	border: none;
+	background: none;
 }
 
-/*span{
-	color: white;
-}*/
 .square{
 width: 30%;
 background: purple;
@@ -32,8 +39,12 @@ margin: 1.66%;
 	color: black;
 
 }
+#colordisplay{
+font-weight: bold;
+font-size: 200%;
+}
 
 .selected
 {
-	background-color: blue;
+	background-color: steelblue;
 }
