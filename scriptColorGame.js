@@ -17,16 +17,16 @@ colorDisplay.textContent = pickedColor;
 messageDisplay.textContent = " ";
 hardButton.classList.add("selected");
 
-easyButton.addEventListener("mouseout", function(){
-	if(numberOfSquares===6)
-	easyButton.classList.remove("selected");
+// easyButton.addEventListener("mouseout", function(){
+// 	if(numberOfSquares===6)
+// 	easyButton.classList.remove("selected");
 	
-})
+// })
 
-easyButton.addEventListener("mouseover", function(){
-	easyButton.classList.add("selected");
+// easyButton.addEventListener("mouseover", function(){
+// 	easyButton.classList.add("selected");
 
-})
+// })
 
 easyButton.addEventListener("click", function(){
 	numberOfSquares=3;
@@ -69,14 +69,14 @@ easyButton.addEventListener("click", function(){
 	// length=3;
 });
 
-hardButton.addEventListener("mouseout", function(){
-	if(numberOfSquares===3)
-	hardButton.classList.remove("selected");
-})
+// hardButton.addEventListener("mouseout", function(){
+// 	if(numberOfSquares===3)
+// 	hardButton.classList.remove("selected");
+// })
 
-hardButton.addEventListener("mouseover", function(){
-	hardButton.classList.add("selected");
-})
+// hardButton.addEventListener("mouseover", function(){
+// 	hardButton.classList.add("selected");
+// })
 
 hardButton.addEventListener("click", function(){
 	hardButton.classList.add("selected");
@@ -101,13 +101,13 @@ hardButton.addEventListener("click", function(){
 	// colors = generateRandomColors(complexity);
 });
 
-resetButton.addEventListener("mouseout", function(){
-	resetButton.classList.remove("selected");
-})
+// resetButton.addEventListener("mouseout", function(){
+// 	resetButton.classList.remove("selected");
+// })
 
-resetButton.addEventListener("mouseover", function(){
-	resetButton.classList.add("selected");
-})
+// resetButton.addEventListener("mouseover", function(){
+// 	resetButton.classList.add("selected");
+// })
 
 
 resetButton.addEventListener("click",function(){

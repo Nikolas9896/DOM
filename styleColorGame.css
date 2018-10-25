@@ -24,7 +24,13 @@ button	{
 	font-weight: 700;
 	letter-spacing: 1px;
 	color: steelblue;
+	font-size: inherit;
+	transition: all 0.3s;
 
+}
+button:hover {
+	background-color: steelblue;
+	color: white;
 }
 
 .square{
@@ -34,6 +40,11 @@ padding-bottom: 30%;
 float: left;
 margin: 1.66%;
 
+}
+
+#message{
+	display: inline-block;
+	width: 20%;
 }
 #container {
 	margin: 0 auto;
