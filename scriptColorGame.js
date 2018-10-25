@@ -1,4 +1,6 @@
-var colors = generateRandomColors(6);
+var complexity = 6;
+
+var colors = generateRandomColors(complexity);
 
 var squares = document.querySelectorAll(".square");
 var colorDisplay = document.getElementById('colordisplay');
@@ -15,19 +17,36 @@ colorDisplay.textContent = pickedColor;
 messageDisplay.textContent = " ";
 
 easyButton.addEventListener("click", function(){
+alert("Easy" + squares.length);
+complexity=3;
 
+colors = generateRandomColors(complexity);
+colors[3] = "rgb(35, 35, 35)"; 
+colors[4] = "rgb(35, 35, 35)"; 
+colors[5] = "rgb(35, 35, 35)"; 
+console.log(colors[0] + " "+ colors[3]);
+	for(var i = 0; i< length; i++)
+	{
+		squares[i].style.backgroundColor = colors[i];
+		console.log(squares[i]);
+	}
+
+length=3;
 });
 
-hardButton.addEventListner("click", function(){
-
-
+hardButton.addEventListener("click", function(){
+alert("Hard" + squares.length);
+complexity=6;
+length=6;
+colors = generateRandomColors(complexity);
 });
+
 
 
 
 resetButton.addEventListener("click",function(){
 	//generate all new colors
-	colors = generateRandomColors(6);
+	colors = generateRandomColors(complexity);
 	//pick a new random color from array
 	pickedColor = pickColor();
 	//change color display to match picked Color
