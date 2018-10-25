@@ -20,10 +20,12 @@ hardButton.classList.add("selected");
 easyButton.addEventListener("mouseout", function(){
 	if(numberOfSquares===6)
 	easyButton.classList.remove("selected");
+	
 })
 
 easyButton.addEventListener("mouseover", function(){
 	easyButton.classList.add("selected");
+
 })
 
 easyButton.addEventListener("click", function(){
