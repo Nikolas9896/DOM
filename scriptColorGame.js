@@ -1,6 +1,6 @@
-var complexity = 6;
-
-var colors = generateRandomColors(complexity);
+// var complexity = 6;
+var numberOfSquares = 6;
+var colors = generateRandomColors(numberOfSquares);
 
 var squares = document.querySelectorAll(".square");
 var colorDisplay = document.getElementById('colordisplay');
@@ -15,30 +15,70 @@ var hardButton = document.getElementById('hard');
 resetButton.textContent = "New Game";
 colorDisplay.textContent = pickedColor;
 messageDisplay.textContent = " ";
+hardButton.classList.add("selected");
 
 easyButton.addEventListener("click", function(){
-alert("Easy" + squares.length);
-complexity=3;
-
-colors = generateRandomColors(complexity);
-colors[3] = "rgb(35, 35, 35)"; 
-colors[4] = "rgb(35, 35, 35)"; 
-colors[5] = "rgb(35, 35, 35)"; 
-console.log(colors[0] + " "+ colors[3]);
-	for(var i = 0; i< length; i++)
+	numberOfSquares=3;
+	resetButton.textContent = "New Game";
+	wincolorH1.style.backgroundColor = "#232323";
+	easyButton.classList.add("selected");
+	hardButton.classList.remove("selected");
+	colors = generateRandomColors(numberOfSquares);
+	pickedColor = pickColor();
+	messageDisplay.textContent = " ";
+	colorDisplay.textContent = pickedColor;
+	for (var i = 0; i < squares.length; i++)
 	{
-		squares[i].style.backgroundColor = colors[i];
-		console.log(squares[i]);
+		if (colors[i])
+		{
+			squares[i].style.backgroundColor = colors[i];
+		}
+		
+		else
+		
+		{
+			squares[i].style.display = "none";
+		}
 	}
+	// alert("Easy" + squares.length);
+	// complexity=3;
+	
+	// colors = generateRandomColors(complexity);
+	// colors[3] = "rgb(35, 35, 35)"; 
+	// colors[4] = "rgb(35, 35, 35)"; 
+	// colors[5] = "rgb(35, 35, 35)"; 
+	// console.log(colors[0] + " "+ colors[3]);
+	
+	// for(var i = 0; i< length; i++)
+	// {
+	// 	squares[i].style.backgroundColor = colors[i];
+	// 	console.log(squares[i]);
+	// }
 
-length=3;
+	// length=3;
 });
 
 hardButton.addEventListener("click", function(){
-alert("Hard" + squares.length);
-complexity=6;
-length=6;
-colors = generateRandomColors(complexity);
+	hardButton.classList.add("selected");
+	easyButton.classList.remove("selected");
+	messageDisplay.textContent = " ";
+	resetButton.textContent = "New Game";
+	wincolorH1.style.backgroundColor = "#232323";
+	numberOfSquares=6;
+	colors = generateRandomColors(numberOfSquares);
+	pickedColor = pickColor();
+	colorDisplay.textContent = pickedColor;
+		for(var i = 0; i < squares.length; i++)
+	{
+		squares[i].style.backgroundColor = colors[i];
+		squares[i].style.display = "block";
+		
+	}
+	
+	// alert("Hard" + squares.length);
+	// complexity=6;
+	// length=6;
+	// colors = generateRandomColors(complexity);
 });
 
 
@@ -46,7 +86,7 @@ colors = generateRandomColors(complexity);
 
 resetButton.addEventListener("click",function(){
 	//generate all new colors
-	colors = generateRandomColors(complexity);
+	colors = generateRandomColors(numberOfSquares);
 	//pick a new random color from array
 	pickedColor = pickColor();
 	//change color display to match picked Color
@@ -55,19 +95,19 @@ resetButton.addEventListener("click",function(){
 	wincolorH1.style.backgroundColor = "#232323";
 	messageDisplay.textContent = " ";
 	resetButton.textContent = "New Game";
-	for(var i = 0; i< length; i++)
+	for(var i = 0; i< squares.length; i++)
 	{
 		squares[i].style.backgroundColor = colors[i];
 	}
 })
 
-for(var i = 0; i<length; i++ )
+for(var i = 0; i<squares.length; i++ )
 {
 	//add initial colors to squares
 	squares[i].style.backgroundColor = colors[i];
 
 
-	//add click listeners to spquares
+	//add click listeners to squares
 	squares[i].addEventListener("click", function(){
 	//grab color of clicked square
 	var clickedColor = this.style.backgroundColor;
@@ -93,7 +133,7 @@ for(var i = 0; i<length; i++ )
 
 function changeColors(color){
 	//loop through all squares
-	for(var i = 0; i < length; i++)
+	for(var i = 0; i < squares.length; i++)
 	{
 		squares[i].style.background = color;
 	}
@@ -101,7 +141,7 @@ function changeColors(color){
 
 function pickColor()
 {
-	var randomI = Math.floor(Math.random()*length);
+	var randomI = Math.floor(Math.random()*numberOfSquares);
 	return colors[randomI];
 }
 
