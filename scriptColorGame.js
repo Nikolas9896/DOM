@@ -120,7 +120,7 @@ resetButton.addEventListener("click",function(){
 	//range colors of squares
 	wincolorH1.style.backgroundColor = "steelblue";
 	messageDisplay.textContent = " ";
-	resetButton.textContent = "New Game";
+	this.textContent = "New Game";
 	for(var i = 0; i< squares.length; i++)
 	{
 		squares[i].style.backgroundColor = colors[i];
