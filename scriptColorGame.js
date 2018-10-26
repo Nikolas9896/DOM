@@ -49,6 +49,7 @@ easyButton.addEventListener("click", function(){
 	numberOfSquares=3;
 	//Update Text "Play Again?" to "New Game" in resetButton
 	resetButton.textContent = "New Game";
+	//Defaul color for h1 Background
 	wincolorH1.style.backgroundColor = "steelblue";
 	//Class selected Easy set
 	easyButton.classList.add("selected");
@@ -112,10 +113,12 @@ mediumButton.addEventListener("click", function(){
 	hardButton.classList.remove("selected");
 	mediumButton.classList.add("selected");
 	easyButton.classList.remove("selected");
+	//Defaul color for h1 Background
+	wincolorH1.style.backgroundColor = "steelblue";
 	//Number of Squares
 	numberOfSquares=6;
 	//Update Text "Play Again?" to "New Game" in resetButton
-	resetButton.textContent = ("New Game");
+	resetButton.textContent = "New Game";
 	//generate 6 new colors for Medium mode
 	colors = generateRandomColors(numberOfSquares);
 	//chose random 1 of the 6 new colors for task
@@ -132,7 +135,7 @@ mediumButton.addEventListener("click", function(){
 			{
 				squares[i].style.backgroundColor = colors[i];
 				
-				//show colors if before was clicked Easy mode for display
+				//show colors if before Easy button was clicked for displaying last 3 of 6 colors;
 				if(i>2)
 				squares[i].style.display = "block";
 			}
@@ -140,23 +143,36 @@ mediumButton.addEventListener("click", function(){
 			else
 			
 			{
+				//hide colors [6]-[8]
 				squares[i].style.display = "none";
 			}
 		}
 	
 });
 
+//************* Hard Button CLick ***********************
+
 hardButton.addEventListener("click", function(){
+	//Class selected Medium set
 	hardButton.classList.add("selected");
 	mediumButton.classList.remove("selected");	
 	easyButton.classList.remove("selected");
+	//clear game Status
 	messageDisplay.textContent = " ";
+	
+	//Update Text "Play Again?" to "New Game" in resetButton
 	resetButton.textContent = "New Game";
+	
 	wincolorH1.style.backgroundColor = "steelblue";
+	
 	numberOfSquares=9;
+	
 	colors = generateRandomColors(numberOfSquares);
+	
 	pickedColor = pickColor();
+	
 	colorDisplay.textContent = pickedColor;
+	
 		for(var i = 0; i < squares.length; i++)
 	{
 		squares[i].style.backgroundColor = colors[i];
