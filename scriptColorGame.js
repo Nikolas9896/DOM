@@ -14,6 +14,13 @@ var resetButton = document.querySelector('#reset');
 //var hardButton = document.getElementById('hard');
 var modeButtons = document.getElementsByClassName('mode');
 
+resetButton.addEventListener("click",function(){
+
+	reset();
+
+
+
+});
 
 for(var i = 0; i < modeButtons.length; i++)
 {
@@ -22,6 +29,7 @@ for(var i = 0; i < modeButtons.length; i++)
 		modeButtons[1].classList.remove("selected");
 		modeButtons[2].classList.remove("selected");
 		this.classList.add("selected");
+		//************Make if function easy//
 		this.textContent==="Easy" ? numberOfSquares = 3: (this.textContent==="Medium" ? numberOfSquares = 6 : numberOfSquares = 9);
 		// if(this.textContent ==="Easy"){
 		// 	numberOfSquares = 3;
