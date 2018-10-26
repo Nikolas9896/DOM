@@ -137,7 +137,6 @@ mediumButton.addEventListener("click", function(){
 				
 				//show colors if before Easy button was clicked for displaying last 3 of 6 colors;
 				if( i > 2 )
-					console.log(i+" ");
 				squares[i].style.display = "block";
 			}
 			
@@ -158,22 +157,29 @@ hardButton.addEventListener("click", function(){
 	hardButton.classList.add("selected");
 	mediumButton.classList.remove("selected");	
 	easyButton.classList.remove("selected");
+
 	//clear game Status
 	messageDisplay.textContent = " ";
-	
+
 	//Update Text "Play Again?" to "New Game" in resetButton
 	resetButton.textContent = "New Game";
-	
+
+	//Defaul color for h1 Background
 	wincolorH1.style.backgroundColor = "steelblue";
-	
+
+	//Number of Squares
 	numberOfSquares=9;
-	
+
+	//generate 9 new colors for Medium mode
 	colors = generateRandomColors(numberOfSquares);
-	
+
+	//chose random 1 of the 9 new colors for task
 	pickedColor = pickColor();
-	
+
+	//Update Task on display
 	colorDisplay.textContent = pickedColor;
-	
+
+	//Show 9 colors
 		for(var i = 0; i < squares.length; i++)
 	{
 		squares[i].style.backgroundColor = colors[i];
@@ -197,32 +203,44 @@ hardButton.addEventListener("click", function(){
 
 
 resetButton.addEventListener("click",function(){
+	
 	//generate all new colors
 	colors = generateRandomColors(numberOfSquares);
+	
 	//pick a new random color from array
 	pickedColor = pickColor();
+
 	//change color display to match picked Color
 	colorDisplay.textContent = pickedColor;
+
 	//range colors of squares
 	wincolorH1.style.backgroundColor = "steelblue";
+
+	//clear game Status
 	messageDisplay.textContent = " ";
+
+	//Update Text "Play Again?" to "New Game" in resetButton
 	this.textContent = "New Game";
+	
+
 	for(var i = 0; i< squares.length; i++)
 	{
 		squares[i].style.backgroundColor = colors[i];
 	}
 })
 
+//*****************---GAME PROCESS---***************************************
 for(var i = 0; i<squares.length; i++ )
 {
 	//add initial colors to squares
 	squares[i].style.backgroundColor = colors[i];
 
-
 	//add click listeners to squares
 	squares[i].addEventListener("click", function(){
+
 	//grab color of clicked square
 	var clickedColor = this.style.backgroundColor;
+
 	if(clickedColor === pickedColor)
 		{
 			messageDisplay.textContent = "Correct!";
@@ -242,7 +260,9 @@ for(var i = 0; i<squares.length; i++ )
 
 
 }
+//************Functions declaration***************************
 
+//FFFFFFFFFFF ---- For changing new colors ---- FFFFFFFFFFFF
 function changeColors(color){
 	//loop through all squares
 	for(var i = 0; i < squares.length; i++)
@@ -251,12 +271,15 @@ function changeColors(color){
 	}
 }
 
+//FFFFFFFFFFF ---- For choosing 1 random color from list Easy 3; Medium 6; Hard 9 colors ---- FFFFFFFFFFFF
 function pickColor()
 {
 	var randomI = Math.floor(Math.random()*numberOfSquares);
 	return colors[randomI];
 }
 
+
+//FFFFFFFFFFF ---- For making new colors array ---- FFFFFFFFFFFF
 function generateRandomColors(num)
 {
 	//make an array
@@ -272,6 +295,7 @@ function generateRandomColors(num)
 	return arr;
 }
 
+//FFFFFFFFFFF ---- For making new colors attributes RGB and transit them to normal format ---- FFFFFFFFFFFF
 function randomColor()
 {
 	//pick "red" from 0 - 255
