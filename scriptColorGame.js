@@ -11,11 +11,25 @@ var wincolorH1 = document.getElementsByTagName('h1')[0];
 var resetButton = document.querySelector('#reset');
 var easyButton = document.getElementById('easy');
 var hardButton = document.getElementById('hard');
+var mediumButton = document.querySelector('#medium');
 
 resetButton.textContent = "New Game";
 colorDisplay.textContent = pickedColor;
 messageDisplay.textContent = " ";
-hardButton.classList.add("selected");
+mediumButton.classList.add("selected");
+	for (var i = 0; i < squares.length; i++)
+	{
+		if (colors[i])
+		{
+			squares[i].style.backgroundColor = colors[i];
+		}
+		
+		else
+		
+		{
+			squares[i].style.display = "none";
+		}
+	}
 
 // easyButton.addEventListener("mouseout", function(){
 // 	if(numberOfSquares===6)
@@ -33,6 +47,7 @@ easyButton.addEventListener("click", function(){
 	resetButton.textContent = "New Game";
 	wincolorH1.style.backgroundColor = "steelblue";
 	easyButton.classList.add("selected");
+	mediumButton.classList.remove("selected");
 	hardButton.classList.remove("selected");
 	colors = generateRandomColors(numberOfSquares);
 	pickedColor = pickColor();
@@ -77,14 +92,41 @@ easyButton.addEventListener("click", function(){
 // hardButton.addEventListener("mouseover", function(){
 // 	hardButton.classList.add("selected");
 // })
+mediumButton.addEventListener("click", function(){
+hardButton.classList.remove("selected");
+mediumButton.classList.add("selected");
+easyButton.classList.remove("selected");
+numberOfSquares=6;
+resetButton.textContent = ("New Game");
+colors = generateRandomColors(numberOfSquares);
+pickedColor = pickColor();
+messageDisplay.textContent = " ";
+colorDisplay.textContent = pickedColor;
+	for (var i = 0; i < squares.length; i++)
+	{
+		if (colors[i])
+		{
+			squares[i].style.backgroundColor = colors[i];
+			squares[i].style.display = "block";
+		}
+		
+		else
+		
+		{
+			squares[i].style.display = "none";
+		}
+	}
+
+});
 
 hardButton.addEventListener("click", function(){
 	hardButton.classList.add("selected");
+	mediumButton.classList.remove("selected");	
 	easyButton.classList.remove("selected");
 	messageDisplay.textContent = " ";
 	resetButton.textContent = "New Game";
 	wincolorH1.style.backgroundColor = "steelblue";
-	numberOfSquares=6;
+	numberOfSquares=9;
 	colors = generateRandomColors(numberOfSquares);
 	pickedColor = pickColor();
 	colorDisplay.textContent = pickedColor;
