@@ -42,27 +42,39 @@ mediumButton.classList.add("selected");
 
 // })
 
+
+//************* Easy Button CLick ***********************
 easyButton.addEventListener("click", function(){
+	//Number of Squares
 	numberOfSquares=3;
+	//Update Text "Play Again?" to "New Game" in resetButton
 	resetButton.textContent = "New Game";
 	wincolorH1.style.backgroundColor = "steelblue";
+	//Class selected Easy set
 	easyButton.classList.add("selected");
 	mediumButton.classList.remove("selected");
 	hardButton.classList.remove("selected");
+	//generate 3 new colors for Easy mode
 	colors = generateRandomColors(numberOfSquares);
+	//chose 1 of the 3 new colors for task
 	pickedColor = pickColor();
+	//clear game Status
 	messageDisplay.textContent = " ";
+	//Update Task on display
 	colorDisplay.textContent = pickedColor;
+	//Show first 3 colors, and hide other 6
 	for (var i = 0; i < squares.length; i++)
 	{
 		if (colors[i])
 		{
+			//initialize colors in the easy mode([0]-[2])
 			squares[i].style.backgroundColor = colors[i];
 		}
 		
 		else
 		
 		{
+			//hide colors [3]-[8]
 			squares[i].style.display = "none";
 		}
 	}
@@ -92,31 +104,46 @@ easyButton.addEventListener("click", function(){
 // hardButton.addEventListener("mouseover", function(){
 // 	hardButton.classList.add("selected");
 // })
-mediumButton.addEventListener("click", function(){
-hardButton.classList.remove("selected");
-mediumButton.classList.add("selected");
-easyButton.classList.remove("selected");
-numberOfSquares=6;
-resetButton.textContent = ("New Game");
-colors = generateRandomColors(numberOfSquares);
-pickedColor = pickColor();
-messageDisplay.textContent = " ";
-colorDisplay.textContent = pickedColor;
-	for (var i = 0; i < squares.length; i++)
-	{
-		if (colors[i])
-		{
-			squares[i].style.backgroundColor = colors[i];
-			squares[i].style.display = "block";
-		}
-		
-		else
-		
-		{
-			squares[i].style.display = "none";
-		}
-	}
 
+//************* Medium Button CLick ***********************
+
+mediumButton.addEventListener("click", function(){
+	//Class selected Medium set
+	hardButton.classList.remove("selected");
+	mediumButton.classList.add("selected");
+	easyButton.classList.remove("selected");
+	//Number of Squares
+	numberOfSquares=6;
+	//Update Text "Play Again?" to "New Game" in resetButton
+	resetButton.textContent = ("New Game");
+	//generate 6 new colors for Medium mode
+	colors = generateRandomColors(numberOfSquares);
+	//chose random 1 of the 6 new colors for task
+	pickedColor = pickColor();
+	//clear game Status
+	messageDisplay.textContent = " ";
+	//Update Task on display
+	colorDisplay.textContent = pickedColor;
+	//Show first 6 colors, and hide other 3
+		for (var i = 0; i < squares.length; i++)
+		{
+				//initialize colors in the Medium mode([0]-[5])
+			if (colors[i])
+			{
+				squares[i].style.backgroundColor = colors[i];
+				
+				//show colors if before was clicked Easy mode for display
+				if(i>2)
+				squares[i].style.display = "block";
+			}
+			
+			else
+			
+			{
+				squares[i].style.display = "none";
+			}
+		}
+	
 });
 
 hardButton.addEventListener("click", function(){
