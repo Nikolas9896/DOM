@@ -131,12 +131,13 @@ mediumButton.addEventListener("click", function(){
 		for (var i = 0; i < squares.length; i++)
 		{
 				//initialize colors in the Medium mode([0]-[5])
-			if (colors[i])
+			if ( colors[i] )
 			{
 				squares[i].style.backgroundColor = colors[i];
 				
 				//show colors if before Easy button was clicked for displaying last 3 of 6 colors;
-				if(i>2)
+				if( i > 2 )
+					console.log(i+" ");
 				squares[i].style.display = "block";
 			}
 			
