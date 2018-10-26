@@ -22,16 +22,17 @@ for(var i = 0; i < modeButtons.length; i++)
 		modeButtons[1].classList.remove("selected");
 		modeButtons[2].classList.remove("selected");
 		this.classList.add("selected");
-		if(this.textContent ==="Easy"){
-			numberOfSquares = 3;
-		}
-		else if(this.textContent === "Medium"){
-			numberOfSquares = 6;
-		}
-		else {
+		this.textContent==="Easy" ? numberOfSquares = 3: (this.textContent==="Medium" ? numberOfSquares = 6 : numberOfSquares = 9);
+		// if(this.textContent ==="Easy"){
+		// 	numberOfSquares = 3;
+		// }
+		// else if(this.textContent === "Medium"){
+		// 	numberOfSquares = 6;
+		// }
+		// else {
 
-		numberOfSquares = 9;
-		}
+		// numberOfSquares = 9;
+		// }
 		reset();
 		//figure out how many squares to show
 		//pick new colors
