@@ -30,7 +30,8 @@ for(var i = 0; i < modeButtons.length; i++)
 		}
 		else {
 
-		numberOfSquares = 9;}
+		numberOfSquares = 9;
+		}
 		reset();
 		//figure out how many squares to show
 		//pick new colors
@@ -312,8 +313,16 @@ function reset(){
 	
 
 	for(var i = 0; i< squares.length; i++)
-	{
-		squares[i].style.backgroundColor = colors[i];
+	{	
+		if(colors[i])
+		{
+			squares[i].style.display = "block";
+			squares[i].style.backgroundColor = colors[i];
+		}
+		else
+		{
+			squares[i].style.display = "none";
+		}
 	}
 
 
