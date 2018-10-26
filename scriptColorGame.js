@@ -9,9 +9,18 @@ var pickedColor = pickColor();
 var messageDisplay = document.querySelector('#message');
 var wincolorH1 = document.getElementsByTagName('h1')[0];
 var resetButton = document.querySelector('#reset');
-var easyButton = document.getElementById('easy');
-var hardButton = document.getElementById('hard');
-var mediumButton = document.querySelector('#medium');
+//var easyButton = document.getElementById('easy');
+//var mediumButton = document.querySelector('#medium');
+//var hardButton = document.getElementById('hard');
+var modeButtons = document.getElementsByClassName('mode');
+
+
+for(var i = 0; i < modeButtons.length; i++)
+{
+	modeButtons[i].addEventListener("click", function(){
+		alert("Check button "+i);
+	});
+}
 
 resetButton.textContent = "New Game";
 colorDisplay.textContent = pickedColor;
@@ -44,7 +53,7 @@ mediumButton.classList.add("selected");
 
 
 //************* Easy Button CLick ***********************
-easyButton.addEventListener("click", function(){
+/*easyButton.addEventListener("click", function(){
 	//Number of Squares
 	numberOfSquares=3;
 	//Update Text "Play Again?" to "New Game" in resetButton
@@ -200,7 +209,7 @@ hardButton.addEventListener("click", function(){
 // resetButton.addEventListener("mouseover", function(){
 // 	resetButton.classList.add("selected");
 // })
-
+*/
 
 resetButton.addEventListener("click",function(){
 	
