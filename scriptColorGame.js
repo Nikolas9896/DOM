@@ -18,14 +18,32 @@ var modeButtons = document.getElementsByClassName('mode');
 for(var i = 0; i < modeButtons.length; i++)
 {
 	modeButtons[i].addEventListener("click", function(){
-		alert("Check button "+i);
+		modeButtons[0].classList.remove("selected");
+		modeButtons[1].classList.remove("selected");
+		modeButtons[2].classList.remove("selected");
+		this.classList.add("selected");
+		if(this.textContent ==="Easy"){
+			numberOfSquares = 3;
+		}
+		else if(this.textContent === "Medium"){
+			numberOfSquares = 6;
+		}
+		else {
+
+		numberOfSquares = 9;}
+		reset();
+		//figure out how many squares to show
+		//pick new colors
+		//pick a new pickedColors
+		//update page to reflect changes
 	});
 }
+
 
 resetButton.textContent = "New Game";
 colorDisplay.textContent = pickedColor;
 messageDisplay.textContent = " ";
-mediumButton.classList.add("selected");
+//mediumButton.classList.add("selected");
 	for (var i = 0; i < squares.length; i++)
 	{
 		if (colors[i])
@@ -211,7 +229,7 @@ hardButton.addEventListener("click", function(){
 // })
 */
 
-resetButton.addEventListener("click",function(){
+/*resetButton.addEventListener("click",function(){
 	
 	//generate all new colors
 	colors = generateRandomColors(numberOfSquares);
@@ -237,6 +255,7 @@ resetButton.addEventListener("click",function(){
 		squares[i].style.backgroundColor = colors[i];
 	}
 })
+*/
 
 //*****************---GAME PROCESS---***************************************
 for(var i = 0; i<squares.length; i++ )
@@ -270,6 +289,36 @@ for(var i = 0; i<squares.length; i++ )
 
 }
 //************Functions declaration***************************
+
+function reset(){
+
+	//generate all new colors
+	colors = generateRandomColors(numberOfSquares);
+	
+	//pick a new random color from array
+	pickedColor = pickColor();
+
+	//change color display to match picked Color
+	colorDisplay.textContent = pickedColor;
+
+	//range colors of squares
+	wincolorH1.style.backgroundColor = "steelblue";
+
+	//clear game Status
+	messageDisplay.textContent = " ";
+
+	//Update Text "Play Again?" to "New Game" in resetButton
+	resetButton.textContent = "New Game";
+	
+
+	for(var i = 0; i< squares.length; i++)
+	{
+		squares[i].style.backgroundColor = colors[i];
+	}
+
+
+}
+
 
 //FFFFFFFFFFF ---- For changing new colors ---- FFFFFFFFFFFF
 function changeColors(color){
